@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0124)https://2eqa6buo9a4-496ff2e9c6d22116-0-colab.googleusercontent.com/outputframe.html?vrz=colab_20231212-060125_RC00_590157039 -->
+<html theme="light" editor="Default Light" style="overflow-y: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+  // Avoid arrow function syntax to stay ES5 compatible for the sake of googlebot.
+  window.addEventListener("message", function (message) {
+    if (message.source != window.parent) {
+      return;
+    }
+    if (message.data.sandboxed_iframe_evaluation) {
+      // Message is available in scope so evaluated script can get params from
+      // it.
+      window.currentMessage = message;
+      eval.call(null, message.data.sandboxed_iframe_evaluation);
+      delete window.currentMessage;
+    }
+  });
+</script>
+<style>html{--paper-blue-200:#90caf9;--paper-blue-300:#64b5f6;--paper-blue-400:#42a5f5;--paper-blue-500:#2196f3;--paper-blue-700:#1976d2;--paper-blue-900:#0d47a1;--paper-blue-a100:#82b1ff;--paper-blue-a200:#448aff;--paper-blue-a400:#2979ff;--paper-blue-a700:#2962ff;--paper-orange-50:#fff3e0;--paper-orange-100:#ffe0b2;--paper-orange-200:#ffcc80;--paper-orange-300:#ffb74d;--paper-orange-400:#ffa726;--paper-orange-500:#ff9800;--paper-orange-700:#f57c00;--paper-grey-50:#fafafa;--paper-grey-100:#f5f5f5;--paper-grey-200:#eeeeee;--paper-grey-300:#e0e0e0;--paper-grey-400:#bdbdbd;--paper-grey-500:#9e9e9e;--paper-grey-600:#757575;--paper-grey-700:#616161;--paper-grey-800:#424242;--paper-grey-900:#212121;--paper-red-100:#ffcdd2;--paper-red-a700:#d50000;--paper-white:#ffffff;--google-blue-600:#1a73e8;--box-shadow-elevation-2dp:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);--box-shadow-elevation-3dp:0 3px 4px 0 rgba(0,0,0,0.14),0 1px 8px 0 rgba(0,0,0,0.12),0 3px 3px -2px rgba(0,0,0,0.4);--paper-font-subhead-font-size:16px;--paper-font-subhead-font-weight:400;--paper-font-subhead-line-height:24px;--paper-font-body1-font-weight:400;--paper-font-body1-line-height:20px;--md-icon-font:"Google Symbols";--mdc-icon-font:"Google Symbols"}html{--colab-dialog-bg-z-index:1001;--colab-dialog-z-index:1002;--colab-anchor-color:#00e;--colab-callout-color:var(--paper-blue-700);--colab-primary-text-color:var(--paper-grey-900);--colab-primary-surface-color:var(--paper-white);--colab-secondary-surface-color:#f7f7f7;--colab-highlighted-surface-color:var(--paper-grey-200);--colab-border-color:#dadada;--colab-bold-border-color:#111;--colab-icon-color:#616161;--colab-comment-anchor-color:var(--paper-blue-300);--ansi-black:rgb(0,0,0);--ansi-red:rgb(139,0,0);--ansi-green:rgb(0,100,0);--ansi-yellow:rgb(205,205,0);--ansi-blue:rgb(0,0,238);--ansi-magenta:rgb(205,0,205);--ansi-cyan:rgb(70,130,180);--ansi-gray:rgb(229,229,229);--ansi-bright-black:rgb(127,127,127);--ansi-bright-red:rgb(255,0,0);--ansi-bright-green:rgb(0,208,0);--ansi-bright-yellow:rgb(255,255,0);--ansi-bright-blue:rgb(92,92,255);--ansi-bright-magenta:rgb(255,0,255);--ansi-bright-cyan:rgb(0,255,255);--ansi-bright-gray:rgb(255,255,255);--colab-code-font-family:monospace;--colab-chrome-font-family:"Roboto","Noto",sans-serif;--colab-chrome-font-size:14px;--colab-comment-highlight-color:#ffe082}html[theme=dark]{--colab-anchor-color:var(--paper-blue-300);--colab-callout-color:var(--paper-blue-900);--colab-primary-text-color:#d5d5d5;--colab-primary-surface-color:#383838;--colab-secondary-surface-color:#454545;--colab-highlighted-surface-color:#525252;--colab-border-color:var(--paper-grey-700);--colab-bold-border-color:#eee;--colab-icon-color:#bdbdbd;--ansi-black:rgb(63,63,63);--ansi-red:rgb(255,122,136);--ansi-green:rgb(87,187,138);--ansi-yellow:rgb(255,255,102);--ansi-blue:rgb(130,177,255);--ansi-magenta:rgb(205,0,205);--ansi-cyan:rgb(153,187,215);--ansi-gray:rgb(229,229,229);--ansi-bright-green:rgb(0,255,0);--gcp-success-icon-color:#81c995;--colab-comment-anchor-color:var(--google-blue-600);--colab-comment-highlight-color:#1a237e}html[editor="High Contrast Dark"]{--code-cell-background:#000;--colab-editor-focus-color:#f38518;--colab-editor-focus-border-thickness:1px}html[editor=Monokai]{--code-cell-background:#272822}html[editor="All Hallows Eve"]{--code-cell-background:#000}html[editor="Amy"]{--code-cell-background:#200020}html[editor="Birds Of Paradise"]{--code-cell-background:#372725}html[editor="Blackboard"]{--code-cell-background:#0c1021}html[editor="Clouds Midnight"]{--code-cell-background:#191919}html[editor="Dominion Day"]{--code-cell-background:#372725}html[editor="Espresso Libre"]{--code-cell-background:#2a211c}html[editor="Merbivore"]{--code-cell-background:#161616}html[editor="Night Owl"]{--code-cell-background:#011627}html[editor="Oceanic Next"]{--code-cell-background:#1b2b34}html[editor="Pastels On Dark"]{--code-cell-background:#211e1e}html[editor="Space Cadet"]{--code-cell-background:#0d0d0d}html[editor="Sunburst"]{--code-cell-background:#000}html[editor="Twilight"]{--code-cell-background:#141414}html[editor="Vibrant Ink"]{--code-cell-background:#000}html[editor="Zenburnesque"]{--code-cell-background:#404040}html[editor="Idle Fingers"]{--code-cell-background:#323232}html[editor="Mono Industrial"]{--code-cell-background:#222c28}html[editor=Synthwave84]{--colab-anchor-color:#f97e72;--colab-primary-surface-color:#241b2f;--colab-secondary-surface-color:#49549539;--colab-highlighted-surface-color:#372d4b;--colab-border-color:#34294fb3;--ansi-red:#fe4450;--ansi-green:#72f1b8;--ansi-yellow:#f97e72;--ansi-blue:#03edf9;--ansi-magenta:#ff7edb;--ansi-cyan:#03edf9;--ansi-bright-red:#fe4450;--ansi-bright-green:#72f1b8;--ansi-bright-yellow:#fede5d;--ansi-bright-blue:#03edf9;--ansi-bright-magenta:#ff7edb;--ansi-bright-cyan:#03edf9}html{overflow-y:hidden}body{background:var(--colab-primary-surface-color);color:var(--colab-primary-text-color);font-family:var(--colab-chrome-font-family);font-size:var(--colab-chrome-font-size);line-height:1.24;font-weight:400;padding:7px 0 10px 5px;margin:0}h1,h2,h3,h4,h5,h6{color:var(--colab-primary-text-color);font-family:var(--colab-chrome-font-family);font-weight:700;margin-bottom:4px}p,ul{margin-bottom:6px;margin-top:6px}pre{margin-bottom:0;margin-top:0}a{color:var(--colab-anchor-color)}div.stream,div.output_text,div.output_text pre{display:inline}.execute_result pre{display:block}div.output_latex,div.output_markdown{max-width:1016px}.output_markdown table,table.dataframe{border-collapse:collapse;border-spacing:0;border:none;table-layout:fixed}.output_markdown table thead,table.dataframe thead{border-bottom:1px solid var(--colab-border-color);font-family:var(--colab-code-font-family);text-align:right}.output_markdown table tr,.output_markdown table th,.output_markdown table td,table.dataframe tr,table.dataframe th,table.dataframe td{border:none;padding:.5em;white-space:normal}.output_markdown table th,table.dataframe th{font-weight:bold}.output_markdown table th.col_heading,table.dataframe th.col_heading{text-align:right}.output_markdown table tbody tr:nth-child(odd),table.dataframe tbody tr:nth-child(odd){background:var(--colab-secondary-surface-color)}.output_markdown table tbody tr:hover,table.dataframe tbody tr:hover,.output_markdown table tbody tr:nth-child(odd):hover,table.dataframe tbody tr:nth-child(odd):hover{background-color:var(--colab-highlighted-surface-color)}.output_markdown table td,table.dataframe td{text-align:right}table.dataTable input.text_filter{width:95%}.output_markdown table th,table.dataTable th{text-align:left}.output_image>img{background-color:white;max-width:100%;vertical-align:bottom}.output_image>img.unconstrained{max-width:unset}.ansibold{font-weight:bold}.ansiblack{color:black}.ansired{color:darkred}.ansigreen{color:darkgreen}.ansiyellow{color:brown}.ansiblue{color:darkblue}.ansipurple{color:darkviolet}.ansicyan{color:steelblue}.ansigray{color:gray}.ansibgblack{background-color:black}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:yellow}.ansibgblue{background-color:blue}.ansibgpurple{background-color:magenta}.ansibgcyan{background-color:cyan}.ansibggray{background-color:gray}.output-error span{font-weight:normal!important}.output-error pre{white-space:pre-wrap}.display_data .output_text pre,.execute_result .output_text pre{white-space:pre-wrap}input.raw_input{font-family:var(--colab-code-font-family);width:90%}input{background:var(--colab-primary-surface-color);border:1px solid var(--colab-bold-border-color);color:var(--colab-primary-text-color)}#output-area{display:flow-root}#output-area button.colab{background-color:var(--colab-secondary-surface-color);border:0;-webkit-box-shadow:var(--box-shadow-elevation-3dp);box-shadow:var(--box-shadow-elevation-3dp);color:var(--colab-primary-text-color);font-family:var(--colab-chrome-font-family);font-size:11px;margin:0 4px 10px 4px;padding:6px;text-transform:uppercase;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}#output-area button.colab:hover{background-color:var(--colab-highlighted-surface-color);cursor:pointer}#output-area .output-error button.error-details{background-color:#42A5F5;color:white}#output-area .output-error button.error-details:hover{background-color:#2196F3}#output-area .stdin-widget{-webkit-box-align:center;-webkit-align-items:center;align-items:center;display:inline;font-family:var(--colab-code-font-family);margin-right:10px;margin-top:10px;min-width:250px;padding:1px}#output-area .stdin-widget-hidden{visibility:hidden}.error .collapsed .extraneous{display:none}.error .error-expander{-webkit-box-align:center;-webkit-align-items:center;align-items:center;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:flex}.error .error-expander hr{border:0;border-top:1px solid var(--colab-bold-border-color);-webkit-box-flex:1;-webkit-flex-grow:1;flex-grow:1;height:1px;margin:0 10px;padding:0}.error .error-expander hr:first-child{max-width:240px}.error .error-expander svg{fill:var(--colab-icon-color);height:24px;stroke:var(--colab-icon-color);width:24px}.lm-Widget.lm-mod-hidden{display:none!important}audio:focus{outline:none}.string-repr{display:inline}.string-repr .quote{opacity:75%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.string-repr pre{display:inline;white-space:pre-wrap;word-break:break-all}.string-repr button{color:var(--colab-primary-text-color);cursor:pointer;border:1px solid rgb(118,118,118);border-radius:2px;outline:none}.string-repr button.copy{background:transparent;border:none;margin-left:4px;opacity:0;padding:0;stroke:var(--colab-primary-text-color);-webkit-transition:opacity .2s;transition:opacity .2s}.string-repr button.copy svg{width:14px}.string-repr.hover button.copy,.string-repr:hover button.copy{opacity:1}.string-repr button.more{background-color:transparent;border-color:transparent;display:none;padding:0;-webkit-transition:background-color .2s,border-color .2s;transition:background-color .2s,border-color .2s}.string-repr.large button.more{display:inline}.string-repr.large.truncated button .collapse{display:none}.string-repr.large button .expand{display:none}.string-repr.large.truncated button .expand{display:inline}.string-repr.hover button.more,.string-repr:hover button.more{border-color:rgb(118,118,118)}sentinel{}
+//@ sourceURL=https://ssl.gstatic.com/colaboratory-static/common/f5275e00f2f8758bce9440e8e82b56e9/outputframe.css</style><!--<base href="https://localhost:8080/">--><base href="."></head><body><div id="output-area"><span id="output-header"> </span><div id="output-body"><div class="stream output-id-35"><div class="output_subarea output_text"><pre>Collecting farm-haystack[colab]
+  Downloading farm_haystack-1.22.1-py3-none-any.whl (856 kB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">856.0/856.0 kB</span><span> </span><span style="color: var(--ansi-red);">7.0 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Collecting boilerpy3 (from farm-haystack[colab])
+  Downloading boilerpy3-1.0.7-py3-none-any.whl (22 kB)
+Collecting events (from farm-haystack[colab])
+  Downloading Events-0.5-py3-none-any.whl (6.8 kB)
+Collecting httpx (from farm-haystack[colab])
+  Downloading httpx-0.25.2-py3-none-any.whl (74 kB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">75.0/75.0 kB</span><span> </span><span style="color: var(--ansi-red);">10.2 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Requirement already satisfied: jsonschema in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (4.19.2)
+Collecting lazy-imports==0.3.1 (from farm-haystack[colab])
+  Downloading lazy_imports-0.3.1-py3-none-any.whl (12 kB)
+Requirement already satisfied: more-itertools in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (10.1.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (3.2.1)
+Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (1.5.3)
+Requirement already satisfied: pillow in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (9.4.0)
+Requirement already satisfied: platformdirs in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (4.1.0)
+Collecting posthog (from farm-haystack[colab])
+  Downloading posthog-3.1.0-py2.py3-none-any.whl (37 kB)
+Collecting prompthub-py==4.0.0 (from farm-haystack[colab])
+  Downloading prompthub_py-4.0.0-py3-none-any.whl (6.9 kB)
+Requirement already satisfied: pydantic&lt;2 in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (1.10.13)
+Collecting quantulum3 (from farm-haystack[colab])
+  Downloading quantulum3-0.9.0-py3-none-any.whl (10.7 MB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">10.7/10.7 MB</span><span> </span><span style="color: var(--ansi-red);">16.7 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Collecting rank-bm25 (from farm-haystack[colab])
+  Downloading rank_bm25-0.2.2-py3-none-any.whl (8.6 kB)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (2.31.0)
+Collecting requests-cache&lt;1.0.0 (from farm-haystack[colab])
+  Downloading requests_cache-0.9.8-py3-none-any.whl (48 kB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">48.7/48.7 kB</span><span> </span><span style="color: var(--ansi-red);">5.5 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Collecting scikit-learn&gt;=1.3.0 (from farm-haystack[colab])
+  Downloading scikit_learn-1.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.8 MB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">10.8/10.8 MB</span><span> </span><span style="color: var(--ansi-red);">50.0 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Collecting sseclient-py (from farm-haystack[colab])
+  Downloading sseclient_py-1.8.0-py2.py3-none-any.whl (8.8 kB)
+Requirement already satisfied: tenacity in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (8.2.3)
+Collecting tiktoken&gt;=0.5.1 (from farm-haystack[colab])
+  Downloading tiktoken-0.5.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">2.0/2.0 MB</span><span> </span><span style="color: var(--ansi-red);">49.1 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from farm-haystack[colab]) (4.66.1)
+Collecting transformers==4.34.1 (from farm-haystack[colab])
+  Downloading transformers-4.34.1-py3-none-any.whl (7.7 MB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">7.7/7.7 MB</span><span> </span><span style="color: var(--ansi-red);">68.2 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Collecting pillow (from farm-haystack[colab])
+  Downloading Pillow-9.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">4.3/4.3 MB</span><span> </span><span style="color: var(--ansi-red);">78.6 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Requirement already satisfied: pyyaml&lt;7.0,&gt;=6.0 in /usr/local/lib/python3.10/dist-packages (from prompthub-py==4.0.0-&gt;farm-haystack[colab]) (6.0.1)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers==4.34.1-&gt;farm-haystack[colab]) (3.13.1)
+Requirement already satisfied: huggingface-hub&lt;1.0,&gt;=0.16.4 in /usr/local/lib/python3.10/dist-packages (from transformers==4.34.1-&gt;farm-haystack[colab]) (0.19.4)
+Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.10/dist-packages (from transformers==4.34.1-&gt;farm-haystack[colab]) (1.23.5)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.10/dist-packages (from transformers==4.34.1-&gt;farm-haystack[colab]) (23.2)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers==4.34.1-&gt;farm-haystack[colab]) (2023.6.3)
+Collecting tokenizers&lt;0.15,&gt;=0.14 (from transformers==4.34.1-&gt;farm-haystack[colab])
+  Downloading tokenizers-0.14.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.8 MB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">3.8/3.8 MB</span><span> </span><span style="color: var(--ansi-red);">66.1 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Requirement already satisfied: safetensors&gt;=0.3.1 in /usr/local/lib/python3.10/dist-packages (from transformers==4.34.1-&gt;farm-haystack[colab]) (0.4.1)
+Requirement already satisfied: typing-extensions&gt;=4.2.0 in /usr/local/lib/python3.10/dist-packages (from pydantic&lt;2-&gt;farm-haystack[colab]) (4.5.0)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;farm-haystack[colab]) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;farm-haystack[colab]) (3.6)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;farm-haystack[colab]) (2.0.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;farm-haystack[colab]) (2023.11.17)
+Requirement already satisfied: appdirs&gt;=1.4.4 in /usr/local/lib/python3.10/dist-packages (from requests-cache&lt;1.0.0-&gt;farm-haystack[colab]) (1.4.4)
+Requirement already satisfied: attrs&gt;=21.2 in /usr/local/lib/python3.10/dist-packages (from requests-cache&lt;1.0.0-&gt;farm-haystack[colab]) (23.1.0)
+Collecting cattrs&gt;=22.2 (from requests-cache&lt;1.0.0-&gt;farm-haystack[colab])
+  Downloading cattrs-23.2.3-py3-none-any.whl (57 kB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">57.5/57.5 kB</span><span> </span><span style="color: var(--ansi-red);">6.5 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Collecting url-normalize&gt;=1.4 (from requests-cache&lt;1.0.0-&gt;farm-haystack[colab])
+  Downloading url_normalize-1.4.3-py2.py3-none-any.whl (6.8 kB)
+Requirement already satisfied: scipy&gt;=1.5.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn&gt;=1.3.0-&gt;farm-haystack[colab]) (1.11.4)
+Requirement already satisfied: joblib&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from scikit-learn&gt;=1.3.0-&gt;farm-haystack[colab]) (1.3.2)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn&gt;=1.3.0-&gt;farm-haystack[colab]) (3.2.0)
+Requirement already satisfied: anyio in /usr/local/lib/python3.10/dist-packages (from httpx-&gt;farm-haystack[colab]) (3.7.1)
+Collecting httpcore==1.* (from httpx-&gt;farm-haystack[colab])
+  Downloading httpcore-1.0.2-py3-none-any.whl (76 kB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">76.9/76.9 kB</span><span> </span><span style="color: var(--ansi-red);">8.4 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Requirement already satisfied: sniffio in /usr/local/lib/python3.10/dist-packages (from httpx-&gt;farm-haystack[colab]) (1.3.0)
+Collecting h11&lt;0.15,&gt;=0.13 (from httpcore==1.*-&gt;httpx-&gt;farm-haystack[colab])
+  Downloading h11-0.14.0-py3-none-any.whl (58 kB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">58.3/58.3 kB</span><span> </span><span style="color: var(--ansi-red);">6.3 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema-&gt;farm-haystack[colab]) (2023.11.2)
+Requirement already satisfied: referencing&gt;=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema-&gt;farm-haystack[colab]) (0.31.1)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /usr/local/lib/python3.10/dist-packages (from jsonschema-&gt;farm-haystack[colab]) (0.13.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.10/dist-packages (from pandas-&gt;farm-haystack[colab]) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas-&gt;farm-haystack[colab]) (2023.3.post1)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from posthog-&gt;farm-haystack[colab]) (1.16.0)
+Collecting monotonic&gt;=1.5 (from posthog-&gt;farm-haystack[colab])
+  Downloading monotonic-1.6-py2.py3-none-any.whl (8.2 kB)
+Collecting backoff&gt;=1.10.0 (from posthog-&gt;farm-haystack[colab])
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: inflect in /usr/local/lib/python3.10/dist-packages (from quantulum3-&gt;farm-haystack[colab]) (7.0.0)
+Collecting num2words (from quantulum3-&gt;farm-haystack[colab])
+  Downloading num2words-0.5.13-py3-none-any.whl (143 kB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">143.3/143.3 kB</span><span> </span><span style="color: var(--ansi-red);">16.1 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Requirement already satisfied: exceptiongroup&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from cattrs&gt;=22.2-&gt;requests-cache&lt;1.0.0-&gt;farm-haystack[colab]) (1.2.0)
+Requirement already satisfied: fsspec&gt;=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub&lt;1.0,&gt;=0.16.4-&gt;transformers==4.34.1-&gt;farm-haystack[colab]) (2023.6.0)
+Collecting huggingface-hub&lt;1.0,&gt;=0.16.4 (from transformers==4.34.1-&gt;farm-haystack[colab])
+  Downloading huggingface_hub-0.17.3-py3-none-any.whl (295 kB)
+     <span style="color: var(--ansi-bright-black);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="color: var(--ansi-green);">295.0/295.0 kB</span><span> </span><span style="color: var(--ansi-red);">26.6 MB/s</span><span> eta </span><span style="color: var(--ansi-cyan);">0:00:00</span><span>
+</span>Collecting docopt&gt;=0.6.2 (from num2words-&gt;quantulum3-&gt;farm-haystack[colab])
+  Downloading docopt-0.6.2.tar.gz (25 kB)
+  Preparing metadata (setup.py) ... done
+Building wheels for collected packages: docopt
+  Building wheel for docopt (setup.py) ... done
+  Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13706 sha256=c607d333705189cd19f683522ca547cb9321edcc001bb7b75c391720d02e2ccc
+  Stored in directory: /root/.cache/pip/wheels/fc/ab/d4/5da2067ac95b36618c629a5f93f809425700506f72c9732fac
+Successfully built docopt
+Installing collected packages: sseclient-py, monotonic, events, docopt, url-normalize, rank-bm25, pillow, num2words, lazy-imports, h11, cattrs, boilerpy3, backoff, tiktoken, scikit-learn, requests-cache, prompthub-py, posthog, huggingface-hub, httpcore, tokenizers, quantulum3, httpx, transformers, farm-haystack
+  Attempting uninstall: pillow
+    Found existing installation: Pillow 9.4.0
+    Uninstalling Pillow-9.4.0:
+      Successfully uninstalled Pillow-9.4.0
+  Attempting uninstall: scikit-learn
+    Found existing installation: scikit-learn 1.2.2
+    Uninstalling scikit-learn-1.2.2:
+      Successfully uninstalled scikit-learn-1.2.2
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface-hub 0.19.4
+    Uninstalling huggingface-hub-0.19.4:
+      Successfully uninstalled huggingface-hub-0.19.4
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.15.0
+    Uninstalling tokenizers-0.15.0:
+      Successfully uninstalled tokenizers-0.15.0
+  Attempting uninstall: transformers
+    Found existing installation: transformers 4.35.2
+    Uninstalling transformers-4.35.2:
+      Successfully uninstalled transformers-4.35.2
+<span style="color: var(--ansi-red);">ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+llmx 0.0.15a0 requires cohere, which is not installed.
+llmx 0.0.15a0 requires openai, which is not installed.</span><span style="color: var(--ansi-red);">
+</span><span>Successfully installed backoff-2.2.1 boilerpy3-1.0.7 cattrs-23.2.3 docopt-0.6.2 events-0.5 farm-haystack-1.22.1 h11-0.14.0 httpcore-1.0.2 httpx-0.25.2 huggingface-hub-0.17.3 lazy-imports-0.3.1 monotonic-1.6 num2words-0.5.13 pillow-9.0.0 posthog-3.1.0 prompthub-py-4.0.0 quantulum3-0.9.0 rank-bm25-0.2.2 requests-cache-0.9.8 scikit-learn-1.3.2 sseclient-py-1.8.0 tiktoken-0.5.2 tokenizers-0.14.1 transformers-4.34.1 url-normalize-1.4.3
+</span></pre></div></div><div class="display_data output-id-36"><div class="output_subarea output_text"><pre><span style="font-weight: bold; color: var(--ansi-red);">WARNING: The following packages were previously imported in this runtime:
+  [PIL]
+You must restart the runtime in order to use newly installed versions.</span></pre></div><div style="padding-top: 10px;"><button class="colab restartruntime">Restart session</button></div></div></div><span id="output-footer"></span></div></body></html>
