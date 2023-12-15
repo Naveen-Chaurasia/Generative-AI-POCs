@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./Langserv_POC/App/packages/rag-chroma"
+    ]
+}
