@@ -20,7 +20,7 @@ async def root():
 @app.get("/api/generate/")
 async def generate_image(imgPromptCreate: _schemas.ImageCreate = _fapi.Depends()):
     
-    image =  _services.generate_image(imgPrompt=imgPromptCreate)
+    image =  await _services.generate_image(imgPrompt=imgPromptCreate)
 
     print(type(image))
     print("*********************")

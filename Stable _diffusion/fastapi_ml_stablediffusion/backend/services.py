@@ -40,4 +40,6 @@ async def generate_image(imgPrompt: _schemas.ImageCreate) -> Image:
                         generator = generator, 
                     ).images[0]
     
+    
+    
     return image
