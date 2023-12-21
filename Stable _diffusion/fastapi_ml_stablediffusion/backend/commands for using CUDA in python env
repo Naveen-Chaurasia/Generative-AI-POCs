@@ -1,0 +1,8 @@
+conda create --name pytorch python=3.7
+conda activate pytorch
+conda install pytorch==1.7.0 torchvision torchaudio cudatoolkit=11.0 -c pytorch
+pip install -r dev-requirements.txt
+uvicorn main:app --port 8885
+conda install -c anaconda ipykernel(for adding a environmnet to kernel in jupyter notebook)
+python -m ipykernel install --user --name=firstEnv
+https://medium.com/@nrk25693/how-to-add-your-conda-environment-to-your-jupyter-notebook-in-just-4-steps-abeab8b8d084
